@@ -1,0 +1,266 @@
+{
+  "db": "PostgreSQL",
+  "0a4a74dd0192c0957f0cf3f0743b6f6a5fb8747fd5b06399e5f185dd11a09abe": {
+    "describe": {
+      "columns": [
+        {
+          "name": "owner_id",
+          "ordinal": 0,
+          "type_info": "Int4"
+        },
+        {
+          "name": "card_id",
+          "ordinal": 1,
+          "type_info": "Int4"
+        },
+        {
+          "name": "card_name",
+          "ordinal": 2,
+          "type_info": "Text"
+        },
+        {
+          "name": "attack",
+          "ordinal": 3,
+          "type_info": "Int4"
+        },
+        {
+          "name": "health",
+          "ordinal": 4,
+          "type_info": "Int4"
+        },
+        {
+          "name": "abilities",
+          "ordinal": 5,
+          "type_info": "TextArray"
+        },
+        {
+          "name": "special_abilities",
+          "ordinal": 6,
+          "type_info": "TextArray"
+        },
+        {
+          "name": "stat_icon",
+          "ordinal": 7,
+          "type_info": "Text"
+        },
+        {
+          "name": "blood_cost",
+          "ordinal": 8,
+          "type_info": "Int4"
+        },
+        {
+          "name": "bone_cost",
+          "ordinal": 9,
+          "type_info": "Int4"
+        },
+        {
+          "name": "gem_cost",
+          "ordinal": 10,
+          "type_info": "Int4Array"
+        }
+      ],
+      "nullable": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "parameters": {
+        "Left": [
+          "Int4Array"
+        ]
+      }
+    },
+    "query": "SELECT * FROM deathcards WHERE card_id = ANY($1)"
+  },
+  "10c26c9dcedcf3a5cf37788dbb215aded76411257450278119b25958a54a5bf6": {
+    "describe": {
+      "columns": [
+        {
+          "name": "user_id",
+          "ordinal": 0,
+          "type_info": "Int4"
+        },
+        {
+          "name": "secret_key",
+          "ordinal": 1,
+          "type_info": "Int8"
+        }
+      ],
+      "nullable": [
+        false,
+        false
+      ],
+      "parameters": {
+        "Left": [
+          "Int4"
+        ]
+      }
+    },
+    "query": "SELECT user_id, secret_key FROM users WHERE user_id = $1"
+  },
+  "aa591cf61dd487b58b0838b102c8d7cfd9fff07c18b5fd382d63e7bfc0fff428": {
+    "describe": {
+      "columns": [
+        {
+          "name": "user_id",
+          "ordinal": 0,
+          "type_info": "Int4"
+        }
+      ],
+      "nullable": [
+        false
+      ],
+      "parameters": {
+        "Left": [
+          "Int8"
+        ]
+      }
+    },
+    "query": "INSERT INTO users (secret_key) VALUES ($1) RETURNING user_id"
+  },
+  "bb4b58249c7f6964566dda0b297715071a8d7a2698adf6f336adef0492179f6d": {
+    "describe": {
+      "columns": [
+        {
+          "name": "card_id",
+          "ordinal": 0,
+          "type_info": "Int4"
+        }
+      ],
+      "nullable": [
+        false
+      ],
+      "parameters": {
+        "Left": []
+      }
+    },
+    "query": "SELECT card_id FROM deathcards"
+  },
+  "dfa520877c017cd5808d02c24ef2d71938b68093974f335a4d89df91874fdaa2": {
+    "describe": {
+      "columns": [],
+      "nullable": [],
+      "parameters": {
+        "Left": [
+          "Int4"
+        ]
+      }
+    },
+    "query": "DELETE FROM users WHERE user_id = $1"
+  },
+  "e49ddba3fab1f44e8637fdea9d1089468b55418050cc4cf2c93bfafb9dfa8da1": {
+    "describe": {
+      "columns": [
+        {
+          "name": "owner_id",
+          "ordinal": 0,
+          "type_info": "Int4"
+        },
+        {
+          "name": "card_id",
+          "ordinal": 1,
+          "type_info": "Int4"
+        },
+        {
+          "name": "card_name",
+          "ordinal": 2,
+          "type_info": "Text"
+        },
+        {
+          "name": "attack",
+          "ordinal": 3,
+          "type_info": "Int4"
+        },
+        {
+          "name": "health",
+          "ordinal": 4,
+          "type_info": "Int4"
+        },
+        {
+          "name": "abilities",
+          "ordinal": 5,
+          "type_info": "TextArray"
+        },
+        {
+          "name": "special_abilities",
+          "ordinal": 6,
+          "type_info": "TextArray"
+        },
+        {
+          "name": "stat_icon",
+          "ordinal": 7,
+          "type_info": "Text"
+        },
+        {
+          "name": "blood_cost",
+          "ordinal": 8,
+          "type_info": "Int4"
+        },
+        {
+          "name": "bone_cost",
+          "ordinal": 9,
+          "type_info": "Int4"
+        },
+        {
+          "name": "gem_cost",
+          "ordinal": 10,
+          "type_info": "Int4Array"
+        }
+      ],
+      "nullable": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "parameters": {
+        "Left": []
+      }
+    },
+    "query": "SELECT * FROM deathcards"
+  },
+  "fec3f66af1a058a5685f4086738f98bed1986d61f992cdf36834760cb6dca7ac": {
+    "describe": {
+      "columns": [
+        {
+          "name": "card_id",
+          "ordinal": 0,
+          "type_info": "Int4"
+        }
+      ],
+      "nullable": [
+        false
+      ],
+      "parameters": {
+        "Left": [
+          "Int4",
+          "Text",
+          "Int4",
+          "Int4",
+          "TextArray",
+          "TextArray",
+          "Text",
+          "Int4",
+          "Int4",
+          "Int4Array"
+        ]
+      }
+    },
+    "query": "\n        INSERT INTO deathcards \n        (owner_id, card_name, attack, health, abilities, special_abilities, stat_icon, blood_cost, bone_cost, gem_cost) \n        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)\n        RETURNING card_id\n        "
+  }
+}
